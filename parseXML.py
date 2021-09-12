@@ -112,35 +112,6 @@ asciicodes = [  'C1', "C2", "C4", "C8",
                 "1", "2", "3", "4", "5", "6", "7",
                 "-1", "0", "1"]
 
-# corresponding dotcodes for Braille symbols
-dotcodes = ['','2-3-4-6','5','3-4-5-6','1-2-4-6','1-4-6','1-2-3-4-6','3','1-2-3-5-6','2-3-4-5-6','1-6','3-4-6','6','3-6','4-6',
-            '3-4','3-5-6','2','2-3','2-5','2-5-6','2-6','2-3-5','2-3-5-6','2-3-6','3-5','1-5-6','5-6','1-2-6','1-2-3-4-5-6',
-            '3-4-5','1-4-5-6','4','1','1-2','1-4','1-4-5','1-5','1-2-4','1-2-4-5','1-2-5','2-4','2-4-5','1-3','1-2-3','1-3-4',
-            '1-3-4-5','1-3-5','1-2-3-4','1-2-3-4-5','1-2-3-5','2-3-4','2-3-4-5','1-3-6','1-2-3-6','2-4-5-6','1-3-4-6','1-3-4-5-6',
-            '1-3-5-6','2-4-6','1-2-5-6','1-2-4-5-6','4-5','4-5-6']
-
-# corresponding letter/word combinations for Braille symbols
-meanings = ['(space)','the','(contraction)','(number prefix)','ed','sh','and','(undefined)','of','with','ch','ing','(uppercase prefix)','-',
-            '(italic prefix)','st','”',',',';',':','.','en','!','( or )','“ or ?','in','wh','(letter prefix)','gh','for','ar','th',
-            '(accent prefix)','a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',
-            'ow','ou','er','(currency prefix)','(contraction)']
-
-# corresponding word combinations for Braille symbols
-words = ['','THE','','','','SHALL','AND','','OF','WITH','CHILD','ING','','','','STILL','WAS','','BE','','','ENOUGH','TO','WERE','HIS',
-         'IN','WHICH','','','FOR','','THIS','','','BUT','CAN','DO','EVERY','FROM','GO','HAVE','','JUST','KNOWLEDGE','LIKE','MORE','NOT',
-         '','PEOPLE','QUITE','RATHER','SO','THAT','US','VERY','WILL','IT','YOU','AS','','OUT','','','']
-
-# todo: decoded strings of possible translations of Braille symbols
-# this can be improved for more robust and clever way to translating 
-# grade 2 Braille input to human eye readable sentences
-decodings = ['SPACE/empty','THE/5-there/4-5-these/4-5-6-their','5-','ble/#','ed','sh/SHALL','AND','3-','OF','WITH','ch/CHILD/5-character',
-             'ing','6-','com/-','4-6-','st/STILL','was/BY/”','ea/,','be/bb/;','con/cc/:','dis/dd/.','en/ENOUGH','to/ff/!','were/gg/()',
-             'his/?/“','in','wh/WHICH/5-where/4-5-whose','5-6-','gh/RELEASE CAPS/<','FOR/full','ar','th/THIS/5-through/4-5-those','´/@',
-             'a/1','b/BUT/2','c/CAN/4-5-6-cannot/3','d/DO/5-day/4-6-ound/4','e/EVERY/5-ever/4-6-ance/5-6-ence/5','f/FROM/5-father/6',
-             'g/GO/5-6-ong/7','h/HAVE/5-here/4-5-6-had/8','i/9','j/JUST/0','k/KNOWLEDGE/5-know','l/LIKE/5-lord/5-6-ful/RELEASE',
-             'm/MORE/5-mother/4-5-6-many','n/NOT/5-name/4-6-sion/5-6-tion/6-ation','o/5-one','p/PEOPLE/5-part','q/QUITE/5-question',
-             'r/RATHER/5-right','s/SO/5-some/4-5-6-spirit/4-6-less/5-6-ness','t/THAT/5-time/4-6-ount/5-6-ment','u/US/5-under/4-5-upon',
-             'v/VERY','w/WILL/5-work/4-5-word/4-5-6-world','x/IT','y/YOU/5-young/5-6-ity/6-ally/','z/AS','ow','ou/OUT/5-ought','er',
              '4-5- ','4-5-6-']
 
 def convert(string, toNotation, fromNotation):
