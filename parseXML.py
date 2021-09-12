@@ -1,5 +1,7 @@
+#!/usr/bin/python3
 from typing import Deque
 from xml.dom.minidom import parse, parseString
+from midi2audio import FluidSynth
 
 def is_rest(note):
     return len(note.getElementsByTagName("rest")) > 0
@@ -195,10 +197,18 @@ def dot2braille(arr):
 print(braille("B2"))
 print(braille("6"))
 
+
+
 def parseXML():
     with open("final.brf", "w+", encoding="utf-8") as f:
+        measuresCount = 0
         for i in range(len(totalNotesArr)):
             print(braille(str(totalNotesArr[i][0]+totalNotesArr[i][3])))
             f.write(braille(totalNotesArr[i][1]))
             f.write(braille(totalNotesArr[i][2]))
             f.write(braille(totalNotesArr[i][0]+totalNotesArr[i][3]))
+            measuresCount += int(totalNotesArr[i][3])
+            if(measuresCount % 8 == 0):
+                measuresCount = 0
+                f.write('\n')
+        
