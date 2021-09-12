@@ -4,7 +4,7 @@ from xml.dom.minidom import parse, parseString
 def is_rest(note):
     return len(note.getElementsByTagName("rest")) > 0
 
-dom = parse("C:\\Users\\josef\\Desktop\\VISM-main\\New.musicxml")
+dom = parse("/Users/nitinpendekanti/Desktop/new.musicxml")
 
 notes = dom.getElementsByTagName("note")
 
@@ -100,7 +100,7 @@ hexend   = ['0','1','2','3','4','5','6','7','8','9','a','b','c','d','e','f']
 hexcodes = [''.join([j, i]) for j in hexbase for i in hexend]
 
 # corresponding ascii codes for Braille symbols
-asciicodes = [  "C1", "C2", "C4", "C8", 
+asciicodes = [  'C1', "C2", "C4", "C8", 
                 "D1", "D2", "D4", "D8", 
                 "E1", "E2", "E4", "E8", 
                 "F1", "F2", "F4", "F8", 
@@ -142,7 +142,9 @@ decodings = ['SPACE/empty','THE/5-there/4-5-these/4-5-6-their','5-','ble/#','ed'
              '4-5- ','4-5-6-']
 
 def convert(string, toNotation, fromNotation):
-    return [toNotation[fromNotation.index(d)] for c in string for d in fromNotation if c == d]
+    for i in range(len(asciicodes)):
+        if string == fromNotation[i]:
+            return toNotation[i]
 
 # ascii to braille. currently supporting grade 1 conversion only
 # you should use convert function to find out possible translations for braille code:
@@ -193,8 +195,10 @@ def dot2braille(arr):
 print(braille("B2"))
 print(braille("6"))
 
-# with open("test.brf", "w+", encoding="utf-8") as f:
-#     for i in range(len(totalNotesArr)):
-#         print(braille(str(totalNotesArr[i][0]+totalNotesArr[i][3])))
-#         f.write(braille(totalNotesArr[i][0]+totalNotesArr[i][3]))
-    
+def parseXML():
+    with open("final.brf", "w+", encoding="utf-8") as f:
+        for i in range(len(totalNotesArr)):
+            print(braille(str(totalNotesArr[i][0]+totalNotesArr[i][3])))
+            f.write(braille(totalNotesArr[i][1]))
+            f.write(braille(totalNotesArr[i][2]))
+            f.write(braille(totalNotesArr[i][0]+totalNotesArr[i][3]))
