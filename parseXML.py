@@ -59,14 +59,14 @@ for note in intervals:
 for note in durations:
     durationArr.append(get_duration(note))
 
-if len(accidentalNotes) == 0:
+if False:
     print("(None found)")
 else:
     for note in accidentalNotes:
         notesArr.append(get_step(note))
         alterArr.append(get_accidental(note))
 
-if len(nonAccidentalsNotes) == 0:
+if False:
     print("(None found)")
 else:
     for note in nonAccidentalsNotes:
@@ -80,4 +80,3 @@ for i in range(len(notesArr)):
 
 for note in totalNotesArr:
     print(note)
-
